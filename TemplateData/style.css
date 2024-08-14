@@ -1,0 +1,151 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* Allow scrolling */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: orange; /* Background color set to orange */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-grow: 1; /* Allow the content to grow and take available space */
+}
+
+#unity-container {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 960px; /* Ensure the container doesn't exceed this width */
+  position: relative; /* Ensure proper positioning */
+}
+
+/* Styles specific to Unity player on desktop */
+#unity-container.unity-desktop {
+  position: relative;
+  /* Center the container horizontally */
+  margin: 0 auto;
+}
+
+/* Styles specific to Unity player on mobile */
+#unity-container.unity-mobile {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Adjust canvas size for mobile devices */
+.unity-mobile #unity-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#unity-loading-bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none; /* Hide by default */
+}
+
+#unity-progress-bar-empty {
+  width: 141px;
+  height: 18px;
+  margin-top: 10px;
+  margin-left: 6.5px;
+  background: url('progress-bar-empty-dark.png') no-repeat center;
+}
+
+#unity-progress-bar-full {
+  width: 0%;
+  height: 18px;
+  margin-top: 10px;
+  background: url('progress-bar-full-dark.png') no-repeat center;
+}
+
+#unity-footer {
+  position: relative; /* Ensure footer is positioned relative to its container */
+}
+
+.unity-mobile #unity-footer {
+  display: none; /* Hide on mobile */
+}
+
+#unity-fullscreen-button {
+  cursor: pointer;
+  float: right;
+  width: 38px;
+  height: 38px;
+  background: url('fullscreen-button.png') no-repeat center;
+}
+
+#unity-warning {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%);
+  background: white;
+  padding: 10px;
+  display: none;
+}
+
+.scores-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Ensure space below scores table */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: red;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  table, th, td {
+    font-size: 14px;
+  }
+}
+
+#footer-developer {
+  position: relative;
+  bottom: 0;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  background-color: black; /* Background color to make the text readable */
+  padding: 10px;
+
+}
